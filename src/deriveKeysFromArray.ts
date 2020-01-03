@@ -17,14 +17,19 @@ const myFoos = [
 ] as const;
 
 
-function createObjectFromFooArray<T extends Foo> (foos: readonly T[])  {  //Need to change the return type
-
-
+function createObjectFromFooArray<T extends Foo>(foos: readonly T[]) {  
     return foos.reduce((acc, cur) => {
-        return {
-            ...acc,
-            [cur.name]: cur
-        } 
-    }, {} as { [K in T["name"]]: Extract<T, { name: K }>;
-}
+      return {
+        ...acc,
+        [cur.name]: cur
+      }
+    }, {} as { [K in T["name"]]: Extract<T, { name: K }>});
+  }
+
+const objectFoo = createObjectFromFooArray(myFoos); 
+
+console.log(objectFoo.hello); 
+console.log(objectFoo.asdfed); //Expected error
+
+
 
