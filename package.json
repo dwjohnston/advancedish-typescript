@@ -1,0 +1,25 @@
+{
+  "name": "advancedish-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "typescript": "^3.7.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1", 
+    "build": "tsc"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwjohnston/advancedish-typescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dwjohnston/advancedish-typescript/issues"
+  },
+  "homepage": "https://github.com/dwjohnston/advancedish-typescript#readme"
+}
