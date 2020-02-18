@@ -17,6 +17,12 @@ type Student = {
 
 type Person = Teacher | Student; 
 
+function promotePerson0(person: Person) {
+    //This doesn't work 
+    if (person.pay !== undefined){
+        console.log(person.pay, person.role); 
+    }
+}
 
 function promotePerson1(person: Person) {
     //TypeScript can infer that the person is a Teacher
