@@ -8,9 +8,11 @@ const myFunctions = {
     c: async () => ({ foo: "bar" })
 }; 
 
-async function callFunctionsAndReturnMap<T extends FunctionMap>(map: T): Promise<{
+type FunctionResultMap<T extends FunctionMap> = {
     [key in keyof T] : ReturnType<T[key]>
-}> {
+}
+
+async function callFunctionsAndReturnMap<T extends FunctionMap>(map: T): Promise<FunctionResultMap<T>> {
     //I would use Object.entries, but TS Playground doesn't like it. 
     const keys = Object.keys(map); 
     const awaitedValues = await  Promise.all(keys.map(v => map[v]).map(v => v())); 
@@ -20,9 +22,7 @@ async function callFunctionsAndReturnMap<T extends FunctionMap>(map: T): Promise
             ...acc, 
             [cur]: awaitedValues[i], 
         }
-    }, {} as  {
-    [key in keyof T] : ReturnType<T[key]>
-});    
+    }, {} as  FunctionResultMap<T>);    
 }
 
 async function start() {
