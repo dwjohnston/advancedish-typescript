@@ -19,7 +19,7 @@ const y = timesTen(10, false);  //Type number
 
 
 
-type Foo = {
+export type Foo = {
     a: string; 
 }
 
