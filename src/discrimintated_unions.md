@@ -192,7 +192,7 @@ The rest of it now makes more sense.
 
 The brackets syntax `[T]` is called an [_index type_](https://www.typescriptlang.org/docs/handbook/advanced-types.html#index-types). 
 
-Essentially what we're doing is saying is 'What are the values that are accessible by these key(s)'. 
+Essentially what we're doing is saying is 'for that mapped object type we just created, , what are the values that are accessible by these key(s)'. 
 
 ```
 type PossibleItems3<T extends ItemIds> = {
